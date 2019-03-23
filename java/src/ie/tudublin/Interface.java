@@ -9,7 +9,8 @@ public class Interface extends PApplet{
     float y = 0; 
     float xspeed = 2;
     float yspeed = 1;
-    float diameter = 100;
+    float diameter = 450;
+    float diameter2 = 350;
     float radius = diameter / 2;
     float fullArc = PI + PI/1.5f;
 
@@ -28,12 +29,23 @@ public void speed(float xspeed,float yspeed){
 
 public void RotatingCircle(){
     
-    translate(width/2,height/2);
-    rotate(radians(r));
-    arc(x, y, diameter, diameter, 0, fullArc);
-    
+    pushMatrix();
+        translate(width/2,height/2);
+        rotate(radians(r));
+        arc(x, y, diameter, diameter, 0, fullArc);
+        
+    popMatrix();
     r += 1;
+}
+public void RotatingCircle2(){
     
+    pushMatrix();
+        translate(width/2,height/2);
+        rotate(radians(r2));
+        arc(x, y, diameter2, diameter2, 0, fullArc);
+        
+    popMatrix();
+    r +=1;
 }
 
 public void update(){
@@ -53,6 +65,7 @@ public void draw(){
     //update();
     //speed(xspeed,yspeed);
     RotatingCircle();
+    RotatingCircle2();
 
 
 
