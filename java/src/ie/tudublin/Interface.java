@@ -4,7 +4,7 @@ import processing.core.PApplet;
 
 public class Interface extends PApplet{
 
-    float r;
+    float r,r2;
     float x = 0;
     float y = 0; 
     float xspeed = 2;
@@ -35,7 +35,7 @@ public void RotatingCircle(){
         arc(x, y, diameter, diameter, 0, fullArc);
         
     popMatrix();
-    r += 1;
+    r += 0.55;
 }
 public void RotatingCircle2(){
     
@@ -45,7 +45,7 @@ public void RotatingCircle2(){
         arc(x, y, diameter2, diameter2, 0, fullArc);
         
     popMatrix();
-    r +=1;
+    r2 += 0.5;
 }
 
 public void update(){
