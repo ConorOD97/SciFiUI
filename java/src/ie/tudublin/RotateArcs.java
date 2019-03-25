@@ -2,20 +2,15 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Interface extends PApplet{
+public class RotateArcs extends PApplet{
 
     float r,r2;
     float x = 0;
-    float x2 = 0;
-    float x3 = 500;
-    float y3 = 250;
-    float y2 = 500;
     float y = 0; 
     float xspeed = 2;
     float yspeed = 2;
     float diameter = 450;
     float diameter2 = 350;
-    float radius = diameter / 2;
     float fullArc = PI + PI/1.5f;
 
 public void settings(){
@@ -26,10 +21,10 @@ public void setup(){
 
 }
 
-public void speed(float xspeed,float yspeed){
-    this.xspeed = xspeed;
-    this.yspeed = yspeed;
-}
+// public void speed(float xspeed,float yspeed){
+//     this.xspeed = xspeed;
+//     this.yspeed = yspeed;
+// }
 
 public void RotatingCircle(){
     
@@ -52,33 +47,15 @@ public void RotatingCircle2(){
     r2 -= 0.5;
 }
 
-public void LineMove(){
-    line(x2,y,x2,y2);
-    line(x,y3,x3,y3);
-}
-
-public void update(){
-    x += xspeed;
+// public void update(){
+//     x += xspeed;
     
-    if(x > width - radius || x < 0 + radius ){
-        xspeed *= -1;
-    }
-    }
+//     if(x > width - radius || x < 0 + radius ){
+//         xspeed *= -1;
+//     }
+//     }
+    
 
-    public void updateLine(){
-        x2 += xspeed;
-
-        if (x2 > width || x2 < 0){
-            xspeed *= -1;
-        }    
-    }
-    public void updateLine2(){
-         y3 += yspeed;
-
-         if(y3 > height || y3 < 0){
-             yspeed *= -1;
-         }
-    }
 
 
 public void draw(){
@@ -90,12 +67,6 @@ public void draw(){
     //speed(xspeed,yspeed);
     RotatingCircle();
     RotatingCircle2();
-    updateLine();
-    updateLine2();
-    LineMove();
-
-
-
 }
 
 }
