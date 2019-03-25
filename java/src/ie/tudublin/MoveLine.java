@@ -12,45 +12,38 @@ public class MoveLine extends PApplet{
     float y3 = 250;
     float xspeed = 2;
     float yspeed = 2;
+    PApplet ui;
 
-    public void settings(){
-        size(500,500);
-    
-    }
-
-    public void setup(){
-
+    public MoveLine(float x, float x2, float x3, float y, float y2, float y3, float xspeed, float yspeed, PApplet ui){
+        this.x = x;
+        this.x2 = x2;
+        this.x3 = x3;
+        this.y = y;
+        this. y2 = y2;
+        this.y3 =y3;
+        this.xspeed = xspeed;
+        this.yspeed = yspeed;
+        this.ui = ui;
     }
 
     public void LineMove(){
-        line(x2,y,x2,y2);
-        line(x,y3,x3,y3);
+        ui.line(x2,y,x2,y2);
+        ui.line(x,y3,x3,y3);
     }
 
     public void updateLine(){
         x2 += xspeed;
 
-        if (x2 > width || x2 < 0){
+        if (x2 > ui.width || x2 < 0){
             xspeed *= -1;
         }    
     }
     public void updateLine2(){
          y3 += yspeed;
 
-         if(y3 > height || y3 < 0){
+         if(y3 > ui.height || y3 < 0){
              yspeed *= -1;
          }
     }
 
-    public void draw(){
-        background(0);
-        stroke(255);
-
-        updateLine();
-        updateLine2();
-        LineMove();
-
-
-        
-    }
 }

@@ -5,6 +5,7 @@ import processing.core.PApplet;
 public class UI extends PApplet
 {
     RotateArcs arcs;
+    MoveLine Mlines;
     boolean[] keys = new boolean[1024];
 
     public void keyPressed()
@@ -33,6 +34,7 @@ public class UI extends PApplet
     public void setup()
     {
         arcs = new RotateArcs(0,0,0,0,2,2,450,350,this,PI + PI/1.5f);
+        Mlines = new MoveLine(0,0,500,0,500,250,2,2,this);
     }
 
 
@@ -43,6 +45,9 @@ public class UI extends PApplet
         noFill();
         arcs.RotatingCircle();
         arcs.RotatingCircle2();
+        Mlines.updateLine();
+        Mlines.updateLine2();
+        Mlines.LineMove();
         
     }
 }
