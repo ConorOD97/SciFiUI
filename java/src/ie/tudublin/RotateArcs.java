@@ -2,7 +2,7 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class RotateArcs extends PApplet{
+public class RotateArcs{
 
     float r,r2;
     float x = 0;
@@ -11,39 +11,48 @@ public class RotateArcs extends PApplet{
     float yspeed = 2;
     float diameter = 450;
     float diameter2 = 350;
-    float fullArc = PI + PI/1.5f;
+    PApplet ui;
+    float fullArc = ui.PI + ui.PI/1.5f;
+    
 
-public void settings(){
-    size(500,500);
-}
-
-public void setup(){
-
-}
 
 // public void speed(float xspeed,float yspeed){
 //     this.xspeed = xspeed;
 //     this.yspeed = yspeed;
 // }
+public RotateArcs(float r,float r2,float x,float y,float xspeed,float yspeed,float diameter,float diameter2,PApplet ui,float fullArc){
+    this.r = r;
+    this.r2 = r2;
+    this.x = x;
+    this.y = y;
+    this.xspeed = xspeed;
+    this.yspeed = yspeed;
+    this.diameter = diameter;
+    this.diameter2 = diameter2;
+    this.fullArc = fullArc;
+    this.ui = ui;
+}
 
 public void RotatingCircle(){
     
-    pushMatrix();
-        translate(width/2,height/2);
-        rotate(radians(r));
-        arc(x, y, diameter, diameter, 0, fullArc);
+    ui.pushMatrix();
+        ui.translate(ui.width/2,ui.height/2);
+        ui.rotate(ui.radians(r));
+        ui.arc(x, y, diameter, diameter, 0, fullArc);
         
-    popMatrix();
+    ui.popMatrix();
     r += 0.55;
 }
+
+
 public void RotatingCircle2(){
     
-    pushMatrix();
-        translate(width/2,height/2);
-        rotate(radians(r2));
-        arc(x, y, diameter2, diameter2, 0, fullArc);
+    ui.pushMatrix();
+        ui.translate(ui.width/2,ui.height/2);
+        ui.rotate(ui.radians(r2));
+        ui.arc(x, y, diameter2, diameter2, 0, fullArc);
         
-    popMatrix();
+    ui.popMatrix();
     r2 -= 0.5;
 }
 
@@ -54,19 +63,5 @@ public void RotatingCircle2(){
 //         xspeed *= -1;
 //     }
 //     }
-    
-
-
-
-public void draw(){
-    background(0);
-    stroke(20,255,212);
-    noFill();
-
-    //update();
-    //speed(xspeed,yspeed);
-    RotatingCircle();
-    RotatingCircle2();
-}
 
 }
