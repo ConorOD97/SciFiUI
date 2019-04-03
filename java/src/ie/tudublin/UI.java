@@ -9,6 +9,7 @@ public class UI extends PApplet
     Radar radar;
     boolean[] keys = new boolean[1024];
 
+
     public void keyPressed()
     {
         keys[keyCode] = true;
@@ -34,9 +35,9 @@ public class UI extends PApplet
 
     public void setup()
     {
-        arcs = new RotateArcs(0,0,0,0,2,2,450,350,this,PI + PI/1.5f);
+        arcs = new RotateArcs(0,0,this,PI + PI/1.5f);
         Mlines = new MoveLine(0,0,500,0,500,250,2,2,this);
-        radar = new Radar(0,0,250,250,200,300,200,300,250,250,0,50,0,0,20,40,60,80,100,20,40,60,80,100,0,this);
+        radar = new Radar(0,this);
     }
 
 
@@ -45,14 +46,13 @@ public class UI extends PApplet
         background(0);
         stroke(255);
         noFill();
-        arcs.RotatingCircle();
-        arcs.RotatingCircle2();
-        Mlines.updateLine();
-        Mlines.updateLine2();
-        Mlines.LineMove();
+        
+        // arcs.RotatingCircle();
+        // arcs.RotatingCircle2();
+        // Mlines.updateLine();
+        // Mlines.updateLine2();
+        // Mlines.LineMove();
         radar.rotateLine();
-        radar.radar();
-        
-        
+        radar.radar(); 
     }
 }

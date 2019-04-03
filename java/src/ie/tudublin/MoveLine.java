@@ -2,7 +2,7 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class MoveLine extends PApplet{
+public class MoveLine{
     
     float x = 0;
     float x2 = 0;

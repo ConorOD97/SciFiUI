@@ -16,7 +16,9 @@ public class Main
 	public static void main(String[] args)
 	{
 		Main main = new Main();
-		//main.Star();
-		main.startUI();		
+		main.startUI();
+		//main.startRadar();
+
+
 	}
 }
