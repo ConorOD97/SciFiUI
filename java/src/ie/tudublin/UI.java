@@ -7,6 +7,7 @@ public class UI extends PApplet
     RotateArcs arcs;
     MoveLine Mlines;
     Radar radar;
+    Button b;
     boolean[] keys = new boolean[1024];
 
 
@@ -28,9 +29,7 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(500, 500);
-        // Use fullscreen instead of size to make your interface fullscreen
-        //fullScreen(P3D); 
+        size(800, 800);
     }
 
     public void setup()
@@ -38,21 +37,22 @@ public class UI extends PApplet
         arcs = new RotateArcs(0,0,this,PI + PI/1.5f);
         Mlines = new MoveLine(0,0,500,0,500,250,2,2,this);
         radar = new Radar(0,this);
+        b = new Button(this,-250,100,50,100,200,75,200,75,"LAUNCH","EXIT");
     }
 
 
-    public void draw()
-    {
+    public void draw() {
         background(0);
-        stroke(255);
-        noFill();
         
-        // arcs.RotatingCircle();
-        // arcs.RotatingCircle2();
+        arcs.RotatingCircle();
+        arcs.RotatingCircle2();
+        b.drawButton();
         // Mlines.updateLine();
         // Mlines.updateLine2();
         // Mlines.LineMove();
-        radar.rotateLine();
-        radar.radar(); 
+        // radar.rotateLine();
+        // radar.radar();
+        // radar.Dot();
+        
     }
 }
