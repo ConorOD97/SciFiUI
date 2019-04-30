@@ -15,7 +15,8 @@ public class Stars{
     }
 
     public void render(){
-        ui.ellipse(x = ui.random(0,ui.width),y = ui.random(0,ui.height),ui.random(0,50),ui.random(0,50));
+        ui.fill(255);
+        ui.ellipse(x = ui.random(100,ui.width-100),y = ui.random(100,ui.height-300),10,10);
         
     }    
 }

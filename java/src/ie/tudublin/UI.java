@@ -1,6 +1,9 @@
 package ie.tudublin;
 
 import processing.core.PApplet;
+import ddf.minim.AudioInput;
+import ddf.minim.Minim;
+import ddf.minim.analysis.FFT;
 
 public class UI extends PApplet
 {
@@ -14,6 +17,7 @@ public class UI extends PApplet
     Button b;
     Stars s;
     Controls c;
+    Audio audio;
     boolean[] keys = new boolean[1024];
 
     public void keyPressed()
@@ -46,6 +50,7 @@ public class UI extends PApplet
         b = new Button(this,-250,100,50,100,200,75,200,75,"LAUNCH","EXIT");
         s = new Stars(this,0,0);
         c = new Controls(this);
+        audio = new Audio(this);
     }
 
 
@@ -62,25 +67,26 @@ public class UI extends PApplet
             if (mousePressed){
                 if(mouseX >= 150 && mouseX <= 350 && mouseY >= 500  && mouseY <=575){
                     mode++;
-                } else if (mouseX >= 450 && mouseX <= 650 && mouseY >= 500  && mouseY <=575){
+                }
+                else if (mouseX >= 450 && mouseX <= 650 && mouseY >= 500  && mouseY <=575){
                     System.exit(0);
                 }
             }
         } else if (mode == 1){
             background(0);
              
-            
-            s.render(); 
-            c.Board(); 
+             
+            c.Board();
+            c.buttons();
             radar.rotateLine();
             radar.radar();
             radar.Dot();
-            Mlines.updateLine();
-            Mlines.updateLine2();
-            Mlines.LineMove();
-        }  
-        
-        
-        
+            
+            
+            // audio.settings();
+            // audio.setup();
+            // audio.render();
+        } 
+       
     }
 }
