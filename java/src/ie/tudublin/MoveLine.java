@@ -27,6 +27,7 @@ public class MoveLine{
     }
 
     public void LineMove(){
+        ui.stroke(255);
         ui.line(x2,y,x2,y2);
         ui.line(x,y3,x3,y3);
     }

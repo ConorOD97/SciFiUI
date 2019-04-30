@@ -26,6 +26,13 @@ public class Button{
         this.txt2 = txt2;
     }
 
+    public void Title(){
+        ui.stroke(252,231,70);
+        ui.textSize(25);
+        ui.textAlign(PApplet.CENTER, PApplet.CENTER);
+        ui.text("WELCOME ABOARD",400,200);
+        ui.line(250,225,550,225);
+    }
     public void drawButton(){
         ui.pushMatrix();
             ui.stroke(3,255,221);
@@ -38,3 +45,6 @@ public class Button{
         ui.popMatrix();
     }
 }
+
+
+
