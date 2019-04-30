@@ -77,16 +77,30 @@ public class UI extends PApplet
              
              
             c.Board();
-            c.buttons();
+            c.Onbuttons();
             radar.rotateLine();
             radar.radar();
             radar.Dot();
-            
-            
+            if (mousePressed){
+                if (mouseX >= 400 && mouseX <= 450 && mouseY >= 600  && mouseY <=650)
+                {
+                    mode++;
+                }
+            }
             // audio.settings();
             // audio.setup();
             // audio.render();
-        } 
+        } else if (mode == 2){
+            background(0); 
+            c.Board();
+            c.Offbuttons();
+            radar.rotateLine();
+            radar.radar();
+            radar.Dot();
+            Mlines.updateLine();
+            Mlines.updateLine2();
+            Mlines.LineMove(); 
+        }
        
     }
 }

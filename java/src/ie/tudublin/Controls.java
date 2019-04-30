@@ -21,7 +21,18 @@ public class Controls{
         ui.rect(95,595,110,110);
     }
 
-    public void buttons(){
+    public void Onbuttons(){
+        ui.fill(0);
+        ui.rect(400,600,250,50);
+        ui.fill(0);
+        ui.rect(400,650,250,50);
+        ui.fill(0,255,0);
+        ui.rect(400,600,50,50);
+        ui.fill(0,255,0);
+        ui.rect(400,650,50,50);
+    }
+
+    public void Offbuttons(){
         ui.fill(0);
         ui.rect(400,600,250,50);
         ui.fill(0);
@@ -30,6 +41,7 @@ public class Controls{
         ui.rect(400,600,50,50);
         ui.fill(255,0,0);
         ui.rect(400,650,50,50);
+        
     }
 
 }
