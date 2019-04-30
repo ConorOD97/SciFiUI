@@ -11,7 +11,7 @@ public class Controls{
     }
 
     public void Board(){
-        ui.pushMatrix();
+
             ui.background(200);
             ui.stroke (3,255,230);
             ui.fill(0);
@@ -20,7 +20,6 @@ public class Controls{
             ui.rect(50,525,700,200,10);
             ui.fill(0);
             ui.rect(95,595,110,110);
-        ui.popMatrix();
     }
 
     public void Onbutton1(){
@@ -32,6 +31,11 @@ public class Controls{
         ui.rect(400,600,50,50);
         ui.fill(255,0,0);
         ui.rect(400,650,50,50);
+        ui.fill(255);
+        ui.textSize(20);
+        ui.textAlign(ui.CENTER);
+        ui.text("Targeting System",560,635);
+        ui.text("Stars",560,680);
     }
 
     public void Onbutton2(){
@@ -43,6 +47,11 @@ public class Controls{
         ui.rect(400,600,50,50);
         ui.fill(0,255,0);
         ui.rect(400,650,50,50);
+        ui.fill(255);
+        ui.textSize(20);
+        ui.textAlign(ui.CENTER);
+        ui.text("Targeting System",560,635);
+        ui.text("Stars",560,680);
     }
 
     public void Offbuttons(){
@@ -54,8 +63,11 @@ public class Controls{
         ui.rect(400,600,50,50);
         ui.fill(255,0,0);
         ui.rect(400,650,50,50);
-        // ui.textAlign();
-        
+        ui.fill(255);
+        ui.textSize(20);
+        ui.textAlign(ui.CENTER);
+        ui.text("Targeting System",560,635);
+        ui.text("Stars",560,680);
     }
 
     public void ChartContainer(){
