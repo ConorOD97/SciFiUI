@@ -77,7 +77,7 @@ public class UI extends PApplet
              
              
             c.Board();
-            c.Onbuttons();
+            c.Offbuttons();
             radar.rotateLine();
             radar.radar();
             radar.Dot();
@@ -85,21 +85,49 @@ public class UI extends PApplet
                 if (mouseX >= 400 && mouseX <= 450 && mouseY >= 600  && mouseY <=650)
                 {
                     mode++;
+                }else if(mouseX >= 400 && mouseX <= 450 && mouseY >= 650  && mouseY <=700)
+                {
+                    mode++;
+                    mode++;
                 }
             }
+            
+            
             // audio.settings();
             // audio.setup();
             // audio.render();
         } else if (mode == 2){
             background(0); 
             c.Board();
-            c.Offbuttons();
+            c.Onbutton1();
             radar.rotateLine();
             radar.radar();
             radar.Dot();
             Mlines.updateLine();
             Mlines.updateLine2();
-            Mlines.LineMove(); 
+            Mlines.LineMove();
+            if (mousePressed){
+                if (mouseX >= 400 && mouseX <= 450 && mouseY >= 650  && mouseY <=700)
+                {
+                    mode++;
+                }
+            }
+
+        }  else if (mode == 3){
+            background(0); 
+            c.Board();
+            c.Onbutton2();
+            radar.rotateLine();
+            radar.radar();
+            radar.Dot();
+            s.render();
+
+            if (mousePressed){
+                if (mouseX >= 400 && mouseX <= 450 && mouseY >= 600  && mouseY <=650)
+                {
+                    mode--;
+                }
+            }
         }
        
     }
