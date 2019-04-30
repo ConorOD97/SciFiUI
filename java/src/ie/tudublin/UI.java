@@ -18,6 +18,7 @@ public class UI extends PApplet
     Stars s;
     Controls c;
     Audio audio;
+    Chart pie;
     boolean[] keys = new boolean[1024];
 
     public void keyPressed()
@@ -43,13 +44,13 @@ public class UI extends PApplet
 
     public void setup()
     {
-        
         arcs = new RotateArcs(0,0,this,PI + PI/1.5f);
         Mlines = new MoveLine(50,100,750,50,500,100,2,2,this); //x,x2,x3,y,y2,y3,xspeed,yspeed,ui   line2 x,y3,x3,y3
         radar = new Radar(0,150,650,this);
         b = new Button(this,-250,100,50,100,200,75,200,75,"LAUNCH","EXIT");
         s = new Stars(this,0,0);
         c = new Controls(this);
+        pie = new Chart(this);
         audio = new Audio(this);
     }
 
@@ -75,12 +76,14 @@ public class UI extends PApplet
         } else if (mode == 1){
             background(0);
              
-             
             c.Board();
+            c.ChartContainer();
             c.Offbuttons();
             radar.rotateLine();
             radar.radar();
             radar.Dot();
+            pie.PieChart();
+            
             if (mousePressed){
                 if (mouseX >= 400 && mouseX <= 450 && mouseY >= 600  && mouseY <=650)
                 {
@@ -99,10 +102,12 @@ public class UI extends PApplet
         } else if (mode == 2){
             background(0); 
             c.Board();
+            c.ChartContainer();
             c.Onbutton1();
             radar.rotateLine();
             radar.radar();
             radar.Dot();
+            pie.PieChart();
             Mlines.updateLine();
             Mlines.updateLine2();
             Mlines.LineMove();
@@ -116,10 +121,12 @@ public class UI extends PApplet
         }  else if (mode == 3){
             background(0); 
             c.Board();
+            c.ChartContainer();
             c.Onbutton2();
             radar.rotateLine();
             radar.radar();
             radar.Dot();
+            pie.PieChart();
             s.render();
 
             if (mousePressed){
