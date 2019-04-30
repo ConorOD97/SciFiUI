@@ -41,7 +41,7 @@ public class UI extends PApplet
     {
         
         arcs = new RotateArcs(0,0,this,PI + PI/1.5f);
-        Mlines = new MoveLine(0,0,800,0,800,400,2,2,this);
+        Mlines = new MoveLine(50,100,750,50,500,100,2,2,this); //x,x2,x3,y,y2,y3,xspeed,yspeed,ui   line2 x,y3,x3,y3
         radar = new Radar(0,150,650,this);
         b = new Button(this,-250,100,50,100,200,75,200,75,"LAUNCH","EXIT");
         s = new Stars(this,0,0);
@@ -69,15 +69,15 @@ public class UI extends PApplet
         } else if (mode == 1){
             background(0);
              
-            Mlines.updateLine();
-            Mlines.updateLine2();
-            Mlines.LineMove();
-            s.render(); 
             
+            s.render(); 
             c.Board(); 
             radar.rotateLine();
             radar.radar();
             radar.Dot();
+            Mlines.updateLine();
+            Mlines.updateLine2();
+            Mlines.LineMove();
         }  
         
         

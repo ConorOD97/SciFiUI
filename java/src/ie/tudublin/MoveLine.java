@@ -35,14 +35,14 @@ public class MoveLine{
     public void updateLine(){
         x2 += xspeed;
 
-        if (x2 > ui.width || x2 < 0){
+        if (x2 > ui.width - 100 || x2 < 100){
             xspeed *= -1;
         }    
     }
     public void updateLine2(){
          y3 += yspeed;
 
-         if(y3 > ui.height || y3 < 0){
+         if(y3 > ui.height - 350 || y3 < 100){
              yspeed *= -1;
          }
     }
