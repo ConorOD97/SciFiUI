@@ -2,10 +2,7 @@ package ie.tudublin;
 
 public class Main
 {	
-	// public void Star(){
-	// 	String[] a = {"MAIN"};
-    //     processing.core.PApplet.runSketch( a, new Star());
-	// }
+	//method to lauch the startUI
 	public void startUI(){
 		String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new UI());
@@ -17,8 +14,6 @@ public class Main
 	{
 		Main main = new Main();
 		main.startUI();
-		//main.startRadar();
-
 
 	}
 }
