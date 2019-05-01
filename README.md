@@ -369,7 +369,7 @@ This is when you create new sub classes which are all based off of a parent clas
 
 This is a youtube video:
 
-[![YouTube](https://www.youtube.com/watch?v=SsscH2UnsTM)
+https://www.youtube.com/watch?v=SsscH2UnsTM
 
 
 
