@@ -100,8 +100,7 @@ if (mode == 0){
 	
 Button: This class declares some variables which are needed for the dimensions to draw the two buttons on the main page.
 These are the launch and exit buttons. This class also has a welcome message to the program.
-
-public void Title(){
+	public void Title(){
         ui.stroke(252,231,70);
         ui.textSize(25);
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
@@ -118,6 +117,7 @@ public void Title(){
             ui.text(txt1,x + w * 0.5f, y + h * 0.5f);
             ui.text(txt2,x1 + w1 * 0.5f, y1 + h1 * 0.5f);
         ui.popMatrix();
+    }
 	
 Chart: 
 # What I am most proud of in the assignment
