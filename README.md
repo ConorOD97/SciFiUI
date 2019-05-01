@@ -120,7 +120,203 @@ These are the launch and exit buttons. This class also has a welcome message to 
         ui.popMatrix();
     }
 	
-Chart: 
+Chart: Uses a rainfall array and displays a piechart based on the rainfaill value. Also uses the map function
+
+	void PieChart()
+    {
+        float cx = 275;
+        float cy = 650;
+
+        float w = ui.width * 0.1f;
+        //arc(cx, cy, w, w, 0, TWO_PI, ARC);
+
+        float total = 0;
+            for (int i = 0 ; i < rainFall.length ; i ++)
+            {
+                total += rainFall[i];
+            }
+
+            float runningSum = 0;
+            for (int i = 0 ; i < rainFall.length ; i ++)
+            {
+                float next = runningSum + rainFall[i];
+                float start = ui.map(runningSum, 0, total, 0, ui.TWO_PI);
+                float end = ui.map(next, 0, total, 0, ui.TWO_PI);
+                ui.fill(ui.map(i, 0, rainFall.length, 150, 255), 0, 255);
+                ui.arc(cx, cy, w, w, start, end, ui.ARC);
+                runningSum = next;
+            }
+        
+    }
+    
+Controls: The class created the control panel of the spacecraft. It also creates the buttons for the targeting system and star viewing.
+
+	public void Board(){
+
+            ui.background(200);
+            ui.stroke (3,255,230);
+            ui.fill(0);
+            ui.rect(50,50,700,450,15);
+            ui.fill(87,89,89);
+            ui.rect(50,525,700,200,10);
+            ui.fill(0);
+            ui.rect(95,595,110,110);
+    }
+
+    public void Onbutton1(){
+        ui.fill(0);
+        ui.rect(400,600,250,50);
+        ui.fill(0);
+        ui.rect(400,650,250,50);
+        ui.fill(0,255,0);
+        ui.rect(400,600,50,50);
+        ui.fill(255,0,0);
+        ui.rect(400,650,50,50);
+        ui.fill(255);
+        ui.textSize(20);
+        ui.textAlign(ui.CENTER);
+        ui.text("Targeting System",560,635);
+        ui.text("Stars",560,680);
+    }
+
+    public void Onbutton2(){
+        ui.fill(0);
+        ui.rect(400,600,250,50);
+        ui.fill(0);
+        ui.rect(400,650,250,50);
+        ui.fill(255,0,0);
+        ui.rect(400,600,50,50);
+        ui.fill(0,255,0);
+        ui.rect(400,650,50,50);
+        ui.fill(255);
+        ui.textSize(20);
+        ui.textAlign(ui.CENTER);
+        ui.text("Targeting System",560,635);
+        ui.text("Stars",560,680);
+    }
+
+    public void Offbuttons(){
+        ui.fill(0);
+        ui.rect(400,600,250,50);
+        ui.fill(0);
+        ui.rect(400,650,250,50);
+        ui.fill(255,0,0);
+        ui.rect(400,600,50,50);
+        ui.fill(255,0,0);
+        ui.rect(400,650,50,50);
+        ui.fill(255);
+        ui.textSize(20);
+        ui.textAlign(ui.CENTER);
+        ui.text("Targeting System",560,635);
+        ui.text("Stars",560,680);
+    }
+
+    public void ChartContainer(){
+        ui.fill(0);
+        ui.rect(225,600,100,100);
+    }
+    
+MoveLine: This class draws two lines and uses two update functions to move the lines up and down the screen.
+
+	public void LineMove(){
+        ui.stroke(255);
+        ui.line(x2,y,x2,y2);
+        ui.line(x,y3,x3,y3);
+    }
+
+    public void updateLine(){
+        x2 += xspeed;
+
+        if (x2 > ui.width - 100 || x2 < 100){
+            xspeed *= -1;
+        }    
+    }
+    public void updateLine2(){
+         y3 += yspeed;
+
+         if(y3 > ui.height - 350 || y3 < 100){
+             yspeed *= -1;
+         }
+    }
+    
+Radar: This class draws out a radar and uses the rotate() function to rotate the line on the radar.
+
+	public void radar(){
+        ui.stroke(37,255,3);
+        ui.noFill();
+        ui.ellipse(tx,ty,110,110);
+        ui.stroke(53,128,41);
+        ui.noFill();
+        ui.pushMatrix();
+            ui.translate(tx,ty);
+            ui.line(0,-50,0,50);
+            ui.line(-50,0,50,0);
+            ui.ellipse(0,0,20,20);
+            ui.ellipse(0,0,40,40);
+            ui.ellipse(0,0,60,60);
+            ui.ellipse(0,0,80,80);
+            ui.ellipse(0,0,100,100);
+        ui.popMatrix();
+        
+    }
+
+    public void rotateLine(){
+        ui.stroke(53,128,41);
+        ui.pushMatrix();
+
+        ui.translate(tx,ty);
+        ui.rotate(ui.radians(r));
+        ui.line(0,0,50,0);
+
+        ui.popMatrix();
+        
+        r += 0.55;
+        
+    }
+
+    public void Dot(){
+        ui.noStroke();
+        ui.pushMatrix();
+            ui.translate(tx,ty);
+            ui.fill(255,0,0);
+            ui.ellipse(30,30,10,10); // x,y,width,hiehgt
+        ui.popMatrix();
+
+    }
+    
+RotatingArcs: This class creates two large arcs which are to be called on the main page. It rotates one arc clockwise and one arc anti clockwise giving a nice effect on the main page.
+
+	public void RotatingCircle(){
+	    ui.pushMatrix();
+	    ui.noFill();
+	    ui.stroke(174,255,0);
+		ui.translate(ui.width/2,ui.height/2);
+		ui.rotate(ui.radians(r));
+		ui.arc(0,0,750,750,0,fullArc);
+        
+    ui.popMatrix();
+    r += 0.55;
+}
+
+
+public void RotatingCircle2(){
+    
+    ui.pushMatrix();
+        ui.translate(ui.width/2,ui.height/2);
+        ui.rotate(ui.radians(r2));
+        ui.arc(0,0,700, 700, 0, fullArc);
+        
+    ui.popMatrix();
+    r2 -= 0.5;
+}
+
+Stars: This class draws ellipses at random x and y coordinates within a certain range. This creates a nice star gazing effect.
+
+	public void render(){
+        ui.fill(255);
+        ui.ellipse(x = ui.random(100,ui.width-100),y = ui.random(100,ui.height-300),10,10);
+        
+    }    
 # What I am most proud of in the assignment
 
 # Markdown Tutorial
