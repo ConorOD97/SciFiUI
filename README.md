@@ -320,6 +320,19 @@ Stars: This class draws ellipses at random x and y coordinates within a certain 
 # What I am most proud of in the assignment
 
 # Markdown Tutorial
+# Interactive (Buttons)
+
+Launch: Launches the spacecraft and goes into its control room
+Tageting System: Turns on the Targeting System
+stars: Turns on star gazing mode
+Exit: Exits the program
+
+
+
+
+
+
+
 
 This is *emphasis*
 
