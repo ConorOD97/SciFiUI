@@ -320,7 +320,7 @@ Stars: This class draws ellipses at random x and y coordinates within a certain 
 # What I am most proud of in the assignment
 
 # Markdown Tutorial
-# Interactive (Buttons)
+## Interactive (Buttons)
 
 	Launch: Launches the spacecraft and goes into its control room
 	Tageting System: Turns on the Targeting System
@@ -332,6 +332,39 @@ Stars: This class draws ellipses at random x and y coordinates within a certain 
 ![An image](images/stars.png)
 ![An image](images/target.png)
 
+## Transforms
+
+pushMatrix() - saves current positon
+popMatrix() - saves prior position
+translate() - moves origin to specified coordinates
+rotate() - rotates object by radians
+
+	public void RotatingCircle(){
+    ui.pushMatrix();
+    ui.noFill();
+    ui.stroke(174,255,0);
+        ui.translate(ui.width/2,ui.height/2);
+        ui.rotate(ui.radians(r));
+        ui.arc(0,0,750,750,0,fullArc);
+        
+    ui.popMatrix();
+    r += 0.55;
+}
+
+
+	public void RotatingCircle2(){
+    
+    ui.pushMatrix();
+        ui.translate(ui.width/2,ui.height/2);
+        ui.rotate(ui.radians(r2));
+        ui.arc(0,0,700, 700, 0, fullArc);
+        
+    ui.popMatrix();
+    r2 -= 0.5;
+
+
+## Inheritance
+This is when you create new sub classes which are all based off of a parent class. In my program The parent class was the ui class.
 This is *emphasis*
 
 This is a bulleted list
