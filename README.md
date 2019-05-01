@@ -322,17 +322,15 @@ Stars: This class draws ellipses at random x and y coordinates within a certain 
 # Markdown Tutorial
 # Interactive (Buttons)
 
-Launch: Launches the spacecraft and goes into its control room
-Tageting System: Turns on the Targeting System
-stars: Turns on star gazing mode
-Exit: Exits the program
-
-
-
-
-
-
-
+	Launch: Launches the spacecraft and goes into its control room
+	Tageting System: Turns on the Targeting System
+	stars: Turns on star gazing mode
+	Exit: Exits the program
+	
+![An image](images/main.png)
+![An image](images/controls.png)
+![An image](images/stars.png)
+![An image](images/target.png)
 
 This is *emphasis*
 
