@@ -100,6 +100,7 @@ if (mode == 0){
 	
 Button: This class declares some variables which are needed for the dimensions to draw the two buttons on the main page.
 These are the launch and exit buttons. This class also has a welcome message to the program.
+
 	public void Title(){
         ui.stroke(252,231,70);
         ui.textSize(25);
