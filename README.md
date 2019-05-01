@@ -365,7 +365,7 @@ rotate() - rotates object by radians
 
 ## Inheritance
 This is when you create new sub classes which are all based off of a parent class. In my program The parent class was the ui class.
-
+![An image](images/Inhertance.png)
 
 This is a youtube video:
 
