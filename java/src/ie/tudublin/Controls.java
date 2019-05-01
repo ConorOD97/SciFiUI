@@ -70,6 +70,15 @@ public class Controls{
         ui.text("Stars",560,680);
     }
 
+    public void exitButton(){
+        ui.fill(0);
+        ui.rect(400,550,100,50);
+        ui.fill(255);
+        ui.textSize(20);
+        ui.textAlign(ui.CENTER);
+        ui.text("EXIT",460,585);
+    }
+
     public void ChartContainer(){
         ui.fill(0);
         ui.rect(225,600,100,100);

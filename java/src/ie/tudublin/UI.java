@@ -4,9 +4,13 @@ import processing.core.PApplet;
 import ddf.minim.AudioInput;
 import ddf.minim.Minim;
 import ddf.minim.analysis.FFT;
+import ddf.minim.*;
+
 
 public class UI extends PApplet
 {
+    Minim minim;
+    AudioPlayer aa;
     //UI class variables
     int mode = 0;
 
@@ -52,10 +56,16 @@ public class UI extends PApplet
         c = new Controls(this);
         pie = new Chart(this);
         audio = new Audio(this);
+
+        minim = new Minim(this);
+        aa = minim.loadFile("aa.wav");
+        
     }
 
 
     public void draw() {
+
+        aa.play();
         background(0);
 
         if (mode == 0){
@@ -79,6 +89,7 @@ public class UI extends PApplet
             c.Board();
             c.ChartContainer();
             c.Offbuttons();
+            c.exitButton();
             radar.rotateLine();
             radar.radar();
             radar.Dot();
@@ -92,6 +103,8 @@ public class UI extends PApplet
                 {
                     mode++;
                     mode++;
+                }else if (mouseX >= 400 && mouseX <= 500 && mouseY >= 550  && mouseY <600){
+                    System.exit(0);
                 }
             }
             
@@ -104,6 +117,7 @@ public class UI extends PApplet
             c.Board();
             c.ChartContainer();
             c.Onbutton1();
+            c.exitButton();
             radar.rotateLine();
             radar.radar();
             radar.Dot();
@@ -115,6 +129,8 @@ public class UI extends PApplet
                 if (mouseX >= 400 && mouseX <= 450 && mouseY >= 650  && mouseY <=700)
                 {
                     mode++;
+                }else if (mouseX >= 400 && mouseX <= 500 && mouseY >= 550  && mouseY <600){
+                    System.exit(0);
                 }
             }
 
@@ -123,6 +139,7 @@ public class UI extends PApplet
             c.Board();
             c.ChartContainer();
             c.Onbutton2();
+            c.exitButton();
             radar.rotateLine();
             radar.radar();
             radar.Dot();
@@ -133,6 +150,8 @@ public class UI extends PApplet
                 if (mouseX >= 400 && mouseX <= 450 && mouseY >= 600  && mouseY <=650)
                 {
                     mode--;
+                }else if (mouseX >= 400 && mouseX <= 500 && mouseY >= 550  && mouseY <600){
+                    System.exit(0);
                 }
             }
         }
